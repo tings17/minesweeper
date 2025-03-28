@@ -34,7 +34,7 @@ public class GameBoard {
         }
     }
 
-    public void clickCell(int row, int col) {
+    public List<Position> clickCell(int row, int col) {
         if (row < 0 || row >= this.gridHeight || col < 0 || col >= this.gridWidth) {
             throw new IllegalArgumentException("Cell position out of bounds");
         }
@@ -43,8 +43,9 @@ public class GameBoard {
         if (!minesPlaced) {
             // if no mines are placed yet, it means this cell is the first clicked cell
             // so we must place the mines after revealing this cell
-            this.placeMines(row, col);
+            return this.placeMines(row, col);
         }
+        return new ArrayList<>();
     }
     
     public List<Position> placeMines(int firstRow, int firstCol) {
