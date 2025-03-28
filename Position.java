@@ -14,4 +14,8 @@ public class Position {
     public int getCol() {
         return this.col;
     }
+    
+    public String toString() {
+        return "(" + this.row + ", " + this.col + ")";
+    }
 }

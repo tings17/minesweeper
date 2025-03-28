@@ -3,11 +3,12 @@ public class BoardCell {
     private int col;
     private boolean isRevealed;
     private boolean isMine;
+    // private int adjacentMineCount;
 
-    public BoardCell(int row, int col, boolean isRevealed) {
+    public BoardCell(int row, int col) {
         this.row = row;
         this.col = col;
-        this.isRevealed = isRevealed;
+        this.isRevealed = false;
     }
 
     public void revealCell() {
